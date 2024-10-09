@@ -1,0 +1,27 @@
+footer li {
+    position: relative;
+    overflow: hidden;
+}
+
+footer li::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    left: -100%;
+    /* Starts from the left (hidden) */
+    transition: left 0.5s ease;
+    /* Animate left property */
+}
+
+footer li:hover::before {
+    left: 0;
+    /* Moves to visible on hover */
+}
+
+footer li:not(:hover)::before {
+    right: -100%;
+    /* Moves out to the right when not hovered */
+}
